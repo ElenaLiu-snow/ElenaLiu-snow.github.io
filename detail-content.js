@@ -34,84 +34,74 @@ vanitas: `
 
 deskboard: `
 <h2>DeskNoteBoard — 桌面任务管理系统</h2>
-<p class="d-sub">macOS 原生常驻应用 · Vibe Coding 驱动开发 · V0.1 → V1.6.0</p>
-<div class="d-meta"><span>SwiftUI</span><span>AppKit</span><span>Swift Package</span><span>macOS</span><span>Vibe Coding</span></div>
-<img class="d-img" src="desknoteboard.png" alt="DeskNoteBoard">
+<p class="d-sub">macOS 原生常驻应用 · Vibe Coding 驱动开发 · V1.6.0</p>
+<div class="d-meta"><span>Swift 6.0</span><span>SwiftUI</span><span>AppKit</span><span>macOS 14+</span><span>Vibe Coding</span></div>
+<img class="d-img" src="desknoteboard.png" alt="DeskNoteBoard 主界面">
 <div class="d-toc"><div class="toc-title">Índice / 目录</div>
-<a href="#" onclick="document.getElementById('db-s1').scrollIntoView()">产品定位与设计理念</a>
-<a href="#" onclick="document.getElementById('db-s2').scrollIntoView()">当前能力总览</a>
-<a href="#" onclick="document.getElementById('db-s3').scrollIntoView()">完整版本迭代记录</a>
-<a href="#" onclick="document.getElementById('db-s4').scrollIntoView()">关键产品判断</a>
-<a href="#" onclick="document.getElementById('db-s5').scrollIntoView()">下一阶段迭代方向</a></div>
-<div class="d-section" id="db-s1">
-  <h3>产品定位与设计理念</h3>
-  <p>一个常驻 macOS 桌面左上角的任务管理系统：以高专注 / 探索性 / 杂务 / SOP / 非结构化休息 / 突发响应为核心结构，兼顾任务管理、每日习惯打卡、完成回顾和轻量复盘。</p>
-  <p>产品不是传统 To-do App，而是桌面上的个人任务管理系统。核心六区结构稳定：「任务」与「习惯」两种对象的生命周期彻底分开。原生 macOS 常驻桌面方案被证明是有效方向。</p>
+<a href="#" onclick="document.getElementById('db-about').scrollIntoView()">概述</a>
+<a href="#" onclick="document.getElementById('db-grid').scrollIntoView()">六个分区</a>
+<a href="#" onclick="document.getElementById('db-screenshots').scrollIntoView()">截图</a>
+<a href="#" onclick="document.getElementById('db-features').scrollIntoView()">核心功能</a>
+<a href="#" onclick="document.getElementById('db-design').scrollIntoView()">设计约束</a>
+<a href="#" onclick="document.getElementById('db-versions').scrollIntoView()">版本迭代</a>
+<a href="#" onclick="document.getElementById('db-tech').scrollIntoView()">技术</a>
+<a href="#" onclick="document.getElementById('db-dl').scrollIntoView()">下载与安装</a></div>
+<div class="d-section" id="db-about">
+  <h3>概述</h3>
+  <p>一个常驻 macOS 桌面的个人任务管理工具。<b>不是 Todo App</b>——传统待办清单把所有事堆在一个列表里，看不出什么是主线、什么是杂务。这个工具用 6 个固定分区映射认知结构，区分「一次性任务」和「每日习惯」两种生命周期。半透明卡片常驻桌面左上角，像桌面的一部分而不是弹窗。</p>
 </div>
-<div class="d-section" id="db-s2">
-  <h3>当前版本能力总览（V1.6.0）</h3>
+<div class="d-section" id="db-grid">
+  <h3>六个分区，一张桌面</h3>
+  <table style="width:100%;border-collapse:collapse;margin:0 0 16px"><tr style="border-bottom:1px solid var(--border)"><th style="text-align:left;padding:6px 8px;font-weight:600;font-size:13px;color:var(--muted)">分区</th><th style="text-align:left;padding:6px 8px;font-weight:600;font-size:13px;color:var(--muted)">定位</th><th style="text-align:left;padding:6px 8px;font-weight:600;font-size:13px;color:var(--muted)">例子</th></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px;font-weight:600">高专注</td><td style="padding:6px 8px">主线任务，需要深度投入</td><td style="padding:6px 8px;font-size:13px;color:var(--muted)">西语复习、整理实习材料</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px;font-weight:600">探索性</td><td style="padding:6px 8px">支线探索，不必须但有获得感</td><td style="padding:6px 8px;font-size:13px;color:var(--muted)">试一个新的 AI 工具流</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px;font-weight:600">杂务</td><td style="padding:6px 8px">脑力消耗低但必须处理</td><td style="padding:6px 8px;font-size:13px;color:var(--muted)">填表单、买东西</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px;font-weight:600">突发响应</td><td style="padding:6px 8px">临时插入，需要优先响应</td><td style="padding:6px 8px;font-size:13px;color:var(--muted)">临时消息、DDL 提醒</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px;font-weight:600">非结构化休息</td><td style="padding:6px 8px">恢复能量的自由活动</td><td style="padding:6px 8px;font-size:13px;color:var(--muted)">散步、拍照、游戏</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px;font-weight:600">SOP</td><td style="padding:6px 8px">每日习惯打卡</td><td style="padding:6px 8px;font-size:13px;color:var(--muted)">喝水、运动、日志</td></tr></table>
+  <p style="font-size:13px;color:var(--muted)">高专注是主卡，占最大面积。其余 5 块围绕排布，同屏可见不需要滚动。</p>
+</div>
+<div class="d-section" id="db-screenshots">
+  <h3>截图</h3>
+  <div style="display:flex;gap:16px;flex-wrap:wrap;margin:16px 0">
+    <div style="flex:1;min-width:240px;max-width:calc(50% - 8px)"><img class="d-img" src="task-detail.png" alt="任务详情浮层" style="border:1px solid var(--border)"><p style="font-size:12px;color:var(--muted);text-align:center;margin-top:4px">双击任务展开详情浮层，编辑优先级和时间标签</p></div>
+    <div style="flex:1;min-width:240px;max-width:calc(50% - 8px)"><img class="d-img" src="daily-done.png" alt="今日已做" style="border:1px solid var(--border)"><p style="font-size:12px;color:var(--muted);text-align:center;margin-top:4px">今日已做页面，按板块分组展示当天完成的任务</p></div>
+  </div>
+</div>
+<div class="d-section" id="db-features">
+  <h3>核心功能</h3>
+  <p><b>任务管理</b> — 输入回车即添加。支持 P0/P1/P2 三级优先级（自动排序）、自定义时间标签（如 DDL 4.30、周末、五一假期）。拖拽即可跨分区移动。双击展开详情编辑。</p>
+  <p><b>SOP 习惯打卡</b> — 每日刷新，点击打卡。自动计算连续打卡天数。默认预设：多喝水、西语练习、阅读思考、运动按摩、日志、任务整理。</p>
+  <p><b>归档与回顾</b> — 完成的任务进入归档，按板块分类。「今日已做」按自然日汇总当天完成的所有任务。一键导出 Markdown，适合写日志、周报、复盘。第二天自动切换新页。</p>
+  <p><b>迁移</b> — 如果你之前用 Do it!，支持一次性导入未完成任务，按象限和关键词自动映射到对应分区，按 sourceTaskID 去重。</p>
+</div>
+<div class="d-section" id="db-design">
+  <h3>设计约束</h3>
   <ul>
-    <li>常驻 macOS 桌面左上角</li>
-    <li>高专注 / 探索性 / 杂务 / SOP / 非结构化休息 / 突发响应六块主区域常驻可见</li>
-    <li>高专注作为主卡呈现，周边5块为中卡</li>
-    <li>SOP 支持每日打卡和连续天数</li>
-    <li>任务支持新增、编辑、拖拽、完成归档</li>
-    <li>任务支持 P0 / P1 / P2 优先级</li>
-    <li>任务支持自定义时间标签</li>
-    <li>双击任务可展开详情浮层</li>
-    <li>支持查看全部已完成任务</li>
-    <li>支持查看「今日已做」并导出 Markdown</li>
-    <li>本地持久化保存</li>
+    <li>不做全功能。不是 Notion，不是 Things 3。只做「每天都在用的核心循环」</li>
+    <li>不堆信息。主页面只显示标题、优先级标签、时间标签。其余在双击浮层里</li>
+    <li>不强占注意力。半透明卡片 + 暗色背景，视觉上像桌面一部分</li>
   </ul>
 </div>
-<div class="d-section" id="db-s3">
-  <h3>完整版本迭代记录</h3>
-  <p><b>版本规则</b>：MAJOR.MINOR.PATCH — 左边看「产品骨架有没有变」，中间看「有没有多出一个正式能力」，右边看「有没有把已有能力修得更稳、更顺、更好看」。0.y.z 为探索期版本。</p>
-  <p><b>V0.1.x 原型期：先把东西挂上桌面</b></p>
-  <ul><li>V0.1.0 原型立项：明确产品形态为原生 macOS 常驻应用，技术路线 Swift Package + SwiftUI + AppKit</li><li>V0.1.1 本地持久化与基础窗口能力</li></ul>
-  <p><b>V0.2.x 结构期：从待办清单变成认知结构</b></p>
-  <ul><li>V0.2.0 固定板块信息架构：按认知模型确定高专注/探索性/杂务/非结构化休息/突发响应五大核心板块</li><li>V0.2.1 SOP 独立成每日习惯区：明确区分任务类和习惯类两种数据生命周期，让产品从「记录工具」升级成「认知结构映射工具」</li></ul>
-  <p><b>V0.3.x 能用期：基础任务流跑通</b></p>
-  <ul><li>V0.3.0 基础任务流完成：新增、编辑、完成、归档、恢复；SOP 每日打卡和连续天数计算</li><li>V0.3.1 输入与点击稳定性修复</li></ul>
-  <p><b>V0.4.x 风格期：从窗口感改为桌面感</b></p>
-  <ul><li>V0.4.0 桌面感第一轮：去掉强存在感大底板，主承载层趋近透明；板块改为半透明卡片</li><li>V0.4.1 视觉系统细修：多轮调整色彩方向，缩小字号提高同屏密度，去掉系统滚动条白色轨道</li><li>V0.4.2 层级策略修补：视觉上像桌面挂件，技术上保留稳定交互</li></ul>
-  <p><b>V0.5.x 交互期：拖拽与详情承载</b></p>
-  <ul><li>V0.5.0 拖拽系统上线：整条任务拖拽，跨板块移动，落点高亮反馈</li><li>V0.5.1 拖拽误拖窗口修复</li><li>V0.5.2 双击详情浮层：承载额外信息，避免主页面信息过载</li></ul>
-  <p><b>V1.0.0 稳定起点</b>：产品对外心智模型稳定——不是传统 To-do，而是桌面上的个人任务管理系统。核心六区结构稳定，任务与习惯生命周期彻底分开。</p>
-  <p><b>V1.1.x 注意力管理：优先级系统</b></p>
-  <ul><li>V1.1.0 优先级字段上线：P0/P1/P2，只在双击详情中编辑</li><li>V1.1.1 高优先级前置排序：产品从「记录任务」走向「管理注意力」</li></ul>
-  <p><b>V1.2.x 空间重构：1大5中布局</b></p>
-  <ul><li>V1.2.0 主卡布局成型：高专注放大为主卡，其余5块围绕排布</li><li>V1.2.1 周边五卡同屏可用</li><li>V1.2.2 窗口空间与定位修补：固定在桌面左上角</li></ul>
-  <p><b>V1.3.x 迁移期：Do it! 一次性导入</b></p>
-  <ul><li>V1.3.0 Do it! 本地迁移能力：只导入未完成任务，按 sourceTaskID 去重，按象限和关键词映射到当前板块</li><li>V1.3.1 迁移入口回收</li></ul>
-  <p><b>V1.4.x 回顾期：完成记录与当日导出</b></p>
-  <ul><li>V1.4.0 全量已完成入口</li><li>V1.4.1 今日已做页面</li><li>V1.4.2 Markdown 导出</li></ul>
-  <p><b>V1.5.x 时间标签第一步：本周需完成</b></p>
-  <ul><li>V1.5.0 本周需完成：任务详情浮层新增标记开关，主页面亮色本周标签</li></ul>
-  <p><b>V1.6.0 时间维度升级：自定义时间标签</b>：将固定布尔字段本周升级为用户可自定义的时间标签。系统开始从「平面任务堆叠」走向「带时间语义的任务规划」。时间维度正式成为后续产品演进的一条主线。</p>
+<div class="d-section" id="db-versions">
+  <h3>版本迭代（V0.1 → V1.6.0）</h3>
+  <p><b>V0.1.x 原型期</b>：确定原生 macOS + SwiftUI/AppKit 路线，跑通本地 JSON 持久化</p>
+  <p><b>V0.2.x 结构期</b>：固定板块信息架构定型。SOP 独立为每日习惯区，区分「任务」和「习惯」两种对象生命周期</p>
+  <p><b>V0.3.x 能用期</b>：任务新增、编辑、完成、归档跑通。SOP 打卡 + 连续天数计算</p>
+  <p><b>V0.4.x 风格期</b>：从窗口感改为桌面感。半透明卡片系统，统一色板，去除强存在感底板</p>
+  <p><b>V0.5.x 交互期</b>：拖拽跨板块移动 + 落点高亮。双击任务展开详情浮层</p>
+  <p><b>V1.0.0 稳定起点</b>：六区结构稳定，任务与习惯双生命周期彻底分离，对外心智模型成型</p>
+  <p><b>V1.1.x ~ V1.6.0</b>：优先级系统 → 高专注放大为主卡的布局重构 → Do it! 一次性迁移 → 今日已做 + Markdown 导出 → 自定义时间标签取代固定「本周」标记</p>
 </div>
-<div class="d-section" id="db-s4">
-  <h3>关键产品判断</h3>
-  <ul>
-    <li>没有把任务和习惯混成一种对象，而是按生命周期拆开</li>
-    <li>没有为了「真桌面层」牺牲交互，而是选择「像桌面 + 可稳定操作」的折中方案</li>
-    <li>没有让细节信息挤占主页面，而是把扩展信息放进双击浮层</li>
-    <li>没有把迁移功能当成长期核心入口，而是迁移后回收</li>
-    <li>没有让优先级和时间标签占满注意力，而是做成轻提示</li>
-  </ul>
+<div class="d-section" id="db-tech">
+  <h3>技术</h3>
+  <p>Swift 6.0 · SwiftUI · AppKit · macOS 14.0+ · 本地 JSON 持久化 · 无网络请求</p>
 </div>
-<div class="d-section" id="db-s5">
-  <h3>下一阶段可继续迭代的方向</h3>
-  <ul>
-    <li>开机自启和后台常驻设置</li>
-    <li>板块排序或可折叠能力</li>
-    <li>时间标签的单独筛选与聚合视图</li>
-    <li>周回顾 / 月回顾导出</li>
-    <li>和外部工具的正式同步，而不只是一次性迁移</li>
-    <li>正式打包、签名与分发</li>
-  </ul>
-</div>
-<p style="font-size:15px;margin-top:20px;padding:16px;background:var(--tag-bg);border-radius:8px">⬇ <a href="https://github.com/ElenaLiu-snow/ElenaLiu-snow.github.io/releases/download/v1.0/DeskNoteBoard-v1.0.zip" target="_blank" style="color:var(--accent);font-weight:600">下载 DeskNoteBoard-v1.0.zip</a> （503KB）<br><span style="font-size:12px;color:var(--muted)">macOS 桌面任务管理系统 · 解压后拖入 /Applications 即可使用</span></p>`,
+<div class="d-section" id="db-dl">
+  <h3>下载与安装</h3>
+  <p style="padding:16px;background:var(--tag-bg);border-radius:8px">⬇ <a href="https://github.com/ElenaLiu-snow/ElenaLiu-snow.github.io/releases/download/v1.0/DeskNoteBoard-v1.0.zip" target="_blank" style="color:var(--accent);font-weight:600">下载 DeskNoteBoard-v1.0.zip</a> （503KB）<br><span style="font-size:12px;color:var(--muted)">支持 macOS 14.0+ · Apple Silicon（M1/M2/M3/M4）· 开源（MIT）</span></p>
+  <p style="margin-top:12px"><b>安装步骤</b>：1. 解压 zip 得到 DeskNoteBoard.app → 2. 拖到 /Applications（或直接双击）→ 3. 首次打开提示「无法验证开发者」→ 系统设置 → 隐私与安全性 → 拉到底部 → 仍要打开（每台 Mac 只需一次）</p>
+</div>`,
 
 rae: `
 <h2>RAE Atelier — 西语语法学习 Agent</h2>
