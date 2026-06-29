@@ -111,7 +111,7 @@ deskboard: `
     <li>正式打包、签名与分发</li>
   </ul>
 </div>
-<p style="font-size:13px;color:var(--muted);margin-top:16px">下载链接：待打包分发后更新</p>`,
+<p style="font-size:15px;margin-top:20px;padding:16px;background:var(--tag-bg);border-radius:8px">⬇ <a href="https://github.com/ElenaLiu-snow/ElenaLiu-snow.github.io/releases/download/v1.0/DeskNoteBoard-v1.0.zip" target="_blank" style="color:var(--accent);font-weight:600">下载 DeskNoteBoard-v1.0.zip</a> （503KB）<br><span style="font-size:12px;color:var(--muted)">macOS 桌面任务管理系统 · 解压后拖入 /Applications 即可使用</span></p>`,
 
 rae: `
 <h2>RAE Atelier — 西语语法学习 Agent</h2>
