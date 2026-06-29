@@ -144,20 +144,90 @@ deskboard: `
 </div>`,
 
 rae: `
-<h2>RAE Atelier — 西语语法学习 Agent</h2>
-<p class="d-sub">复古风西语语法问答助手 · Next.js 全栈 · AI 辅助开发 · 内测中</p>
-<div class="d-meta"><span>Next.js</span><span>React</span><span>Tailwind</span><span>AI Agent</span><span>西语学习</span></div>
-<img class="d-img" src="screenshots/rae-atelier.jpg" alt="RAE Atelier">
-<div class="d-section">
-  <h3>产品思路</h3>
-  <p>针对西班牙语学习者（尤其是中文母语者）在冠词、介词等语法难点上的学习需求，构建复古风格的 AI 语法问答助手。以 RAE（西班牙皇家语言学院）标准为底层知识框架，通过 AI 辅助生成解释和例句。</p>
-  <p>视觉设计采用复古学术风格（暖色调纸张质感、衬线体），营造「语言学习工作室」的氛围感，与 Museo de Vanitas 的数字人文美学一脉相承。</p>
+<h2>RAE Atelier — 西语语法智能助手</h2>
+<p class="d-sub">面向 B1-B2 级中文母语学习者的 AI 语法助手 · Next.js 全栈 · RAG 驱动</p>
+<div class="d-meta"><span>Next.js</span><span>React</span><span>Tailwind</span><span>RAG</span><span>DeepSeek</span><span>西语学习</span></div>
+<p style="margin:12px 0;padding:10px 16px;background:var(--tag-bg);border-radius:8px;font-size:14px">🌐 <a href="https://frontend-flax-tau-24.vercel.app" target="_blank" style="color:var(--accent);font-weight:600">frontend-flax-tau-24.vercel.app</a></p>
+<img class="d-img" src="screenshots/rae-atelier.jpg" alt="RAE Atelier 界面">
+
+<div class="d-toc"><div class="toc-title">Índice / 目录</div>
+<a href="#" onclick="document.getElementById('rae-why').scrollIntoView()">1. 为什么需要它</a>
+<a href="#" onclick="document.getElementById('rae-compare').scrollIntoView()">2. 方案对比</a>
+<a href="#" onclick="document.getElementById('rae-features').scrollIntoView()">3. 功能详述</a>
+<a href="#" onclick="document.getElementById('rae-principles').scrollIntoView()">4. 设计原则</a>
+<a href="#" onclick="document.getElementById('rae-how').scrollIntoView()">5. 技术原理</a>
+<a href="#" onclick="document.getElementById('rae-faq').scrollIntoView()">6. 常见问题</a>
+<a href="#" onclick="document.getElementById('rae-progress').scrollIntoView()">7. 开发进度</a></div>
+
+<div class="d-section" id="rae-why">
+  <h3>1. 为什么需要它</h3>
+  <p>学西语语法，你大概遇到过这些情况：</p>
+  <ul>
+    <li><b>语法书太厚，翻了等于没翻。</b> RAE 官方《Nueva gramática de la lengua española》（NGLE）全书 48 章、数千页。你知道答案就在书里，但就是找不到。找到了，学术西语的描述方式也不一定看得懂。</li>
+    <li><b>问 AI，答案看起来像那么回事，但不敢信。</b> ChatGPT、DeepSeek 对西语语法的回答常出现术语混淆、规则遗漏、例句尴尬——你用中文提问，它在中文训练数据和西语语法知识之间"脑补"，你分不清哪里对、哪里是编的。</li>
+    <li><b>市面上的工具不教"为什么"。</b> Duolingo 练的是语感，西班牙语助手查的是单词。但当你问"为什么这里是虚拟式而不是陈述式？""这个前置词用 de 还是 por？"，这些工具给不了你答案。</li>
+    <li><b>写了作文没人改。</b> 或者老师改了，只告诉你"这里不对"，但不解释背后的规则是什么、下次怎么避免。</li>
+    <li><b>学了一堆零散知识，不知道怎么串起来。</b> 课本笔记、课堂截图、老师板书散落在各处，你想把它们变成系统的语法学习材料，但没有趁手的工具。</li>
+  </ul>
 </div>
-<div class="d-section">
-  <h3>技术栈</h3>
-  <p>Next.js 全栈应用，React 前端 + Tailwind CSS。AI Agent 驱动语法解析与回答生成。Claude Code 辅助全流程开发，从项目初始化到页面布局到 Agent 逻辑均由 AI 辅助完成。</p>
+
+<div class="d-section" id="rae-compare">
+  <h3>2. 方案对比</h3>
+  <table style="width:100%;border-collapse:collapse;margin:0 0 16px"><tr style="border-bottom:1px solid var(--border)"><th style="text-align:left;padding:6px 8px;font-weight:600;font-size:13px;color:var(--muted)">方案</th><th style="text-align:left;padding:6px 8px;font-weight:600;font-size:13px;color:var(--muted)">权威性</th><th style="text-align:left;padding:6px 8px;font-weight:600;font-size:13px;color:var(--muted)">中文友好</th><th style="text-align:left;padding:6px 8px;font-weight:600;font-size:13px;color:var(--muted)">个性化</th><th style="text-align:left;padding:6px 8px;font-weight:600;font-size:13px;color:var(--muted)">练习生成</th><th style="text-align:left;padding:6px 8px;font-weight:600;font-size:13px;color:var(--muted)">成本</th></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px;font-size:13px">西班牙语助手</td><td style="padding:6px 8px;font-size:13px">无</td><td style="padding:6px 8px;font-size:13px">✅</td><td style="padding:6px 8px;font-size:13px">❌</td><td style="padding:6px 8px;font-size:13px">固定题库</td><td style="padding:6px 8px;font-size:13px">¥98/年</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px;font-size:13px">Duolingo</td><td style="padding:6px 8px;font-size:13px">无</td><td style="padding:6px 8px;font-size:13px">部分</td><td style="padding:6px 8px;font-size:13px">弱</td><td style="padding:6px 8px;font-size:13px">固定题型</td><td style="padding:6px 8px;font-size:13px">免费/付费</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px;font-size:13px">直接问 ChatGPT/DeepSeek</td><td style="padding:6px 8px;font-size:13px">弱（幻觉多）</td><td style="padding:6px 8px;font-size:13px">✅</td><td style="padding:6px 8px;font-size:13px">✅</td><td style="padding:6px 8px;font-size:13px">需手动 prompt</td><td style="padding:6px 8px;font-size:13px">免费</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px;font-size:13px">找家教</td><td style="padding:6px 8px;font-size:13px">因人而异</td><td style="padding:6px 8px;font-size:13px">✅</td><td style="padding:6px 8px;font-size:13px">✅</td><td style="padding:6px 8px;font-size:13px">✅</td><td style="padding:6px 8px;font-size:13px">¥150-300/h</td></tr>
+<tr style="border-bottom:1px solid var(--border);background:var(--tag-bg)"><td style="padding:6px 8px;font-size:13px;font-weight:600">Spanish Grammar Agent</td><td style="padding:6px 8px;font-size:13px;font-weight:600">RAE 原文引述</td><td style="padding:6px 8px;font-size:13px;font-weight:600">✅</td><td style="padding:6px 8px;font-size:13px;font-weight:600">✅</td><td style="padding:6px 8px;font-size:13px;font-weight:600">AI 动态生成</td><td style="padding:6px 8px;font-size:13px;font-weight:600">几乎免费</td></tr></table>
 </div>
-<p style="font-size:13px;color:var(--muted)">在线地址：待部署后更新</p>`,
+
+<div class="d-section" id="rae-features">
+  <h3>3. 功能详述</h3>
+  <p><b>语法问答（Chat / Auto）</b> — 输入任何西语语法问题，用中文或西语都可以。每个回答都会引用 RAE/NGLE 原文，明确标注规则来源，不是 AI 自由发挥。系统自动检测提问意图，也可手动选择模式。</p>
+  <p><b>练习题生成（Drill）</b> — 动态生成填空、选择、改错、翻译四种题型，轮换覆盖不同技能维度。每道题附答案和逐项解析。</p>
+  <p><b>作文批改（Correction）</b> — 逐句批改，每个错误标注类型（G语法/O拼写/L词汇/P标点/R语域），给出正确写法和规则解释，同类错误不重复展开。</p>
+  <p><b>口语表达升级（Oral）</b> — 输入想表达的意思，给出正式[F]、中性[N]、口语[C]、俚语[S]四个语域版本，附带搭配网络和升级路径。</p>
+  <p><b>学习规划（Coach）</b> — 告诉它你的可用时间和薄弱环节，生成具体练习计划。</p>
+  <p><b>文化语境（Culture）</b> — 以文化为锚点引出语言现象，解释地域差异和使用场合。</p>
+  <p><b>上传学习资料</b> — 支持课堂笔记（Word/Markdown/TXT）或课本扫描图/板书截图（PNG/JPG），自动提取文字、分析语法点、基于材料出题。</p>
+  <p><b>浏览 NGLE 官方语法书</b> — 48 章完整内容，中西双语标题，侧边栏目录导航，逐章阅读。</p>
+</div>
+
+<div class="d-section" id="rae-principles">
+  <h3>4. 设计原则</h3>
+  <ul>
+    <li><b>权威优先</b> — 每次回答都引用 RAE/NGLE/ASALE 原文。AI 的角色是"翻译官"——把学术语法书的内容用你能理解的方式讲出来，而不是自己编规则</li>
+    <li><b>中文友好</b> — 用中西语法对比的方式解释概念（比如西语虚拟式 vs 中文"如果/可能/希望"的逻辑）</li>
+    <li><b>不只是"对不对"，而是"为什么"</b> — 批改作文不只告诉你错了，还告诉你规则是什么、下次怎么避免</li>
+    <li><b>开箱即用</b> — Web 应用，浏览器打开就能用，不需要安装配置</li>
+    <li><b>没有广告，没有订阅</b> — 个人项目，不是商业产品</li>
+    <li><b>不做什么</b>：不教发音、不做听力练习、不涉及 C1-C2 学术写作、不是背单词工具</li>
+  </ul>
+</div>
+
+<div class="d-section" id="rae-how">
+  <h3>5. 技术原理</h3>
+  <p>它是一个"中间人"，架在学习者和 AI 大模型之间。当你提问时做三件事：</p>
+  <p>1. <b>查资料</b> — 提取你问题中的语法关键词，去 RAE 知识库里找到对应的官方语法章节</p>
+  <p>2. <b>打包上下文</b> — 把 RAE 原文 + 你的问题 + 当前模式的指令一起发给 AI</p>
+  <p>3. <b>返回结果</b> — AI 在 RAE 原文的约束下生成回答，所以不是自由发挥，而是基于权威来源</p>
+  <p style="font-size:13px;color:var(--muted)">知识库覆盖词法（名词、动词、代词等）和句法（时态、语式、构式等）核心话题，约 80 个关键词索引，持续扩充。底层使用 DeepSeek 大模型，支持 Anthropic Claude 作为备选。</p>
+</div>
+
+<div class="d-section" id="rae-faq">
+  <h3>6. 常见问题</h3>
+  <p><b>Q: 回答真的可靠吗？</b> A: 核心机制是 RAG——每个回答都以 RAE 知识库原文为"锚点"。但 AI 仍可能犯错，遇到可疑的地方建议对照 RAE 原文或咨询老师。</p>
+  <p><b>Q: 和直接问 DeepSeek/ChatGPT 有什么区别？</b> A: 这个产品在提问前自动检索 RAE 原文并注入上下文，相当于给 AI 配了一本随时可查的权威参考书。直接问通用 AI 则没有这个约束。</p>
+  <p><b>Q: 适合什么水平？</b> A: B1-B2。A 级可能更需要基础词汇和句型练习；C 级涉及更复杂的语用和文体问题，可部分覆盖。</p>
+  <p><b>Q: 数据怎么存储？</b> A: 查询历史存在浏览器 localStorage 里，不上传服务器。API 调用只发送当前问题内容。</p>
+  <p><b>Q: 为什么界面长这样？</b> A: 刻意不做蓝白/灰白配色的"AI 产品标准脸"。Saenredam 教堂画背景 + 酒红/橄榄绿暖色系 + 衬线字体，想要的是"学术图书馆"的安静感。</p>
+</div>
+
+<div class="d-section" id="rae-progress">
+  <h3>7. 开发进度</h3>
+  <p><b>已完成</b>：语法问答 RAE 知识库检索增强 · 5 种学习模式 · 模式自动检测 · 流式输出 · NGLE 48 章浏览 · 文件上传（含 OCR）· 查询历史 · 键盘快捷键</p>
+  <p><b>计划中</b>：练习历史追踪（错过的语法点优先出题）· 语法掌握度评估雷达图 · 知识库关键词自动提取 · 学习打卡与进度可视化 · 移动端 PWA · 语音输入</p>
+</div>`,
 aicompanion: `
 <h2>AI Companion 赛道：范式转移与商业终局</h2>
 <p class="d-sub">行业研究 · 独立完成 · 基于 a16z、Sensor Tower 等数据源</p>
