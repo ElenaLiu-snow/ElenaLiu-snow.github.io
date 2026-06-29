@@ -7,11 +7,12 @@
 <style>
 :root{--bg:#faf8f5;--text:#2c2416;--muted:#8c8068;--border:#e6ddce;--accent:#b8874a;--tag-bg:#f3ede2;--card-bg:#fff;--shadow:0 1px 3px rgba(0,0,0,.04);--shadow-hover:0 4px 16px rgba(0,0,0,.06)}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:'';position:fixed;inset:0;z-index:-1;background:url('bg-martin.jpg') center/cover no-repeat;opacity:.08}
 
-/* Hero — John Martin inspired dark gradient */
-.hero{position:relative;padding:100px 24px 80px;text-align:center;overflow:hidden;background:url('bg-martin.jpg') center/cover no-repeat}
-.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.35) 60%,rgba(0,0,0,.65) 100%);z-index:1}
+/* Hero */
+.hero{position:relative;padding:100px 24px 80px;text-align:center;overflow:hidden;background:linear-gradient(180deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.55) 100%)}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(180,120,60,.1) 0%,transparent 60%),radial-gradient(ellipse at 70% 40%,rgba(200,140,70,.06) 0%,transparent 50%);z-index:1}
 .hero>*{position:relative;z-index:2}
 .hero h1{font-size:28px;font-weight:600;letter-spacing:-.02em;color:#e8dcc8;margin-bottom:8px}
 .hero .subtitle{font-size:15px;color:rgba(220,200,160,.6);margin-bottom:16px}
@@ -70,7 +71,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hira
 .section-header{max-width:1200px;margin:0 auto;padding:0 24px 20px;font-size:14px;color:var(--muted);letter-spacing:.05em}
 .photo-strip{max-width:1200px;margin:0 auto 48px;padding:0 24px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
 .photo-strip::-webkit-scrollbar{display:none}
-.photo-strip img{height:200px;border-radius:8px;flex-shrink:0;transition:transform .2s;cursor:pointer}
+.photo-strip img{max-height:260px;width:auto;border-radius:8px;flex-shrink:0;transition:transform .2s;cursor:pointer}
 .photo-strip img:hover{transform:scale(1.03)}
 .lightbox{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.92);align-items:center;justify-content:center}
 .lightbox.open{display:flex}
@@ -199,9 +200,8 @@ function filter(cat){
 }
 
 // Photo strip
-const PHOTOS=[];
-for(let i=1;i<=10;i++){const n=String(12800000000000+1782658478+i*4).slice(0,14);PHOTOS.push(`photos/photo_${n}.jpg`)}
-PHOTOS.forEach(src=>{const img=document.createElement('img');img.src=src;img.alt='摄影作品';img.loading='lazy';img.onclick=e=>{e.stopPropagation();openLightbox(src)};document.getElementById('photo-strip').appendChild(img)});
+const PHOTOS=['12801782658478','12811782658482','12821782658485','12831782658486','12841782658488','12851782658491','12861782658493','12871782658497','12881782658500','12891782658502'].map(n=>`photos/photo_${n}.jpg`);
+PHOTOS.forEach(src=>{const img=document.createElement('img');img.src=src;img.alt='摄影作品';img.loading='lazy';img.style.objectFit='contain';img.onclick=e=>{e.stopPropagation();openLightbox(src)};document.getElementById('photo-strip').appendChild(img)});
 function openLightbox(s){document.getElementById('lightbox-img').src=s;document.getElementById('lightbox').classList.add('open')}
 function closeLightbox(){document.getElementById('lightbox').classList.remove('open')}
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeLightbox();closeDetail()}});

@@ -127,7 +127,7 @@ rae: `
   <h3>技术栈</h3>
   <p>Next.js 全栈应用，React 前端 + Tailwind CSS。AI Agent 驱动语法解析与回答生成。Claude Code 辅助全流程开发，从项目初始化到页面布局到 Agent 逻辑均由 AI 辅助完成。</p>
 </div>
-<p style="font-size:13px;color:var(--muted)">在线地址：待部署后更新</p>`
+<p style="font-size:13px;color:var(--muted)">在线地址：待部署后更新</p>`,
 gpt4o: `
 <h2>Mourning the Loss of an LLM</h2>
 <p class="d-sub">A case study of the GPT-4o discontinuation controversy · 学术论文 · 英文写作 · 1,605词 · Critical Thinking & Academic Writing 课程论文</p>
