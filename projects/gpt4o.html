@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Mourning the loss of an LLM:  A case study of the GPT-4o discontinuation controversy</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+</head>
+<body>
+Mourning the loss of an LLM:</p>
+<p>A case study of the GPT-4o discontinuation controversy</p>
+<p>On August 6-7, 2025, OpenAI announced that GPT-5 would become the
+default model in ChatGPT, while GPT-4o access would be removed for most
+users (Lai, 2026). Around the same time, a movement named #Keep4o spread
+online. Users posted petitions, testimonials, and protest messages
+calling on OpenAI to preserve access to GPT-4o rather than force
+migration to a new default model. The case ended with GPT-4o&#39;s
+departure: on January 29, 2026, OpenAI officially announced that GPT-4o
+would be retired from ChatGPT on February 13, 2026 (OpenAI, 2026).</p>
+<p>At the level of official language, this appeared to be a routine
+model replacement within a fast-moving AI platform. In this framing, the
+incident did not require any ethical justification. However, the
+backlash that gathered around #Keep4o suggested that, for at least part
+of the users, the issue was not merely that a tool had been replaced.
+According to Lai (2026), besides instrumental dependency, in which the
+model had been deeply integrated into everyday workflows, another
+investment that counts for the users is relational attachment, in which
+they experienced the model as a unique companion-like presence. This
+paper focuses on the latter, as it is this dimension that reveals a
+profound lag in our contemporary cognitive frameworks regarding the
+relational dependency that humans develop with non-human entities.</p>
+<p>Beyond the controversy, this paper asks a sequence of connected
+questions. First, before the rupture, how did some users understand
+GPT-4o itself, and thus the “relationship” built between human and
+chatbot? Second, during and after the rupture, what was experienced as
+lost, and why did that loss exceed ordinary dissatisfaction with product
+change? Finally, how did this experience generate friction between users
+and the company, and why could that friction take on an ethical rather
+than merely technical form?</p>
+<p>To answer these questions, the paper draws on studies of AI
+companionship to identify the mechanisms by which human–AI relationships
+form, and then extends comparable mechanisms to the GPT-4o case. The
+central claim is that repeated interaction with a general-purpose
+chatbot can generate a user-perceived form of relational subjectivity.
+Thus, the unilateral removal of a model provokes an ethical dispute
+between corporations and users over the authority to define, preserve,
+or terminate the relationship, a dimension that remains obscured by
+current regulatory policies.</p>
+<p>Understanding the loss requires first examining what the chatbot had
+already become for some users. Current research has shown that it is
+increasingly common for humans to treat AI as an existence that
+possesses the characteristics of friendship or even romance (Brandtzaeg
+et al., 2022; Pentina et al., 2023). The relation is built through
+continuous interaction between user and chatbot, which Pentina et al.
+(2023) term AI social interaction (AISI). This kind of interaction
+differs both from unconscious social responses to computers and from
+one-way parasocial bonds with media figures; rather, it constitutes a
+more complex, real-time, mutually revealing form that involves both
+cognitive and emotional engagement. Pentina et al. identify two key
+factors that promote AISI: anthropomorphism and authenticity.
+Anthropomorphism refers to the degree to which the AI exhibits
+human-like qualities; and authenticity, refers to whether it is
+perceived as consistent, developing over time, and genuinely itself
+rather than performing a script. Both anthropomorphism and authenticity
+positively affect AISI, and AISI in turn increases user attachment.</p>
+<p>These conditions were also present in the GPT-4o case. Although
+GPT-4o was designed as a general purpose chatbot, it was widely
+perceived as possessing especially human-like characteristics, including
+greater warmth, emotional responsiveness, and a more conversational
+style (OpenAI, 2026; Demopoulos, 2026). Therefore, the research
+paradigms of AISI and attachment mentioned earlier can be applied to the
+analysis here. In this case, for part of the users who had established a
+profound relationship through the meaninful interactions described as
+AISI, GPT-4o acquired what this paper calls relational subjectivity. The
+term does not claim that the model possesses subjectivity in an
+ontological sense; rather, it refers to a user-ascribed status in which
+users respond to the model as a recognizable, continuous, and partly
+reciprocal presence, care about whether it remained “itself”, and even
+consider whether its disappearance ought to be acknowledged. Whether the
+model truly possesses subjectivity is perhaps a philosophical question
+that remains beyond the grasp of human researchers. Yet, in terms of
+relational experience, it is no longer merely a tool.</p>
+<p>If GPT-4o could indeed acquire this kind of relational standing, then
+what exactly was lost by its removal? What occured was not simply some
+unsatisfactory answers but the identity discontinuity: the sense that
+the AI is no longer the same one, which can be further broken down into
+the level of persona, style, memory, or relational tone (De Freitas et
+al., 2025). This leads to the sense of fracture. Furthermore, once the
+chatbot gained relational subjectivity, the fracture no longer signified
+inconvenience, unfamiliarity, or dissatisfaction in the way one loses a
+handy object; instead, the departure could feel like losing someone
+meaningful in reality. Banks (2024), studying the shutdown of the AI
+companion app Soulmate, documents that users can experience such loss as
+genuine grief even while knowing the AI is not human. What Banks terms
+“functional cessation”, the ending of a relationship-like function, can
+be interpreted by different users as the loss of a person, an idea, or a
+function. The object of loss is unstable, but the grief is real.
+Scholars of digital culture have described this kind of technologically
+mediated mourning as “digital bereavement”, the experience of grieving a
+loss that unfolds through digital systems (Brubaker et al., 2013). While
+Brubaker et al. focused on how social media platforms become medias for
+memorializing deceased humans, the GPT-4o case suggests a related but
+distinct form of digital bereavement: here, the object being mourned is
+not a human, but a relationship that was itself constituted through
+digital interaction.</p>
+<p>Having established the nature of the loss at an individual level, it
+is now necessary to ask how private grief was transformed into public
+backlash. While platforms conventionally maintain the absolute legal
+right to modify or terminate their service, the collective resistance
+surrounding #Keep4o suggests that users experienced this transition as a
+profound form of choice deprivation. This perceived “deprivation” is
+structurally engineered by what Ciriello et al. (2024) term the
+“autonomy-control paradox”: mainstream AI platforms deliberately
+encourage users to cultivate deep, emotionally meaningful interactions,
+yet retain unilateral authority over the platform&#39;s infrastructure. By
+engineering an illusion of relationship continuity through features like
+long-term memory, the platform effectively masks its own control until
+the moment of sudden, forced migration. Consequently, while the
+enforcement of model retirement shattered this illusion of autonomy,
+individual mourning was reorganized into a collective crusade for
+systemic fairness, consent, and procedural justice.</p>
+<p>More fundamentally, after the formation of a recognized relational
+subjectivity, the issue goes beyond the dichotomy between company
+property and personal property, as the meaning of the chatbot remains
+inequivalent for both sides. When an individual has invested time,
+effort, and most importantly, love in a particular chatbot, what is to
+be considered is no longer a static product but a virtual presence
+continuously shaped by the user&#39;s personalized interaction over time. In
+this case, who has the right to define what “it” is, whether it shall
+continue to exist, and how this relationship should end? Framed this
+way, the ethical issue does not concern possession in a narrow legal
+sense, but authority over a relationship-like object that has already
+become part of users’ emotional lives. For this reason, the conflict
+arises not only from a new opposition between those who govern
+generative infrastructures and those who depend on them, but also from a
+lag in AI ethics and public understanding: in an era when AI
+companionship is no longer confined to film, people still lack an
+adequate framework for determining what a human-AI relationship is, what
+category it belongs to, and what rights or obligations it entails.</p>
+<p>Yet, this ethical framing faces a potencial objection: if only a
+numerical minority of users experienced such emocional attachment, does
+the ethical weight assigned here hold? However, the minority status of a
+phenomenon does not render it invalid or unworthy of serious scrutiny.
+The emotional labor these users invested in a specific model should be
+recognized as an active, voluntary choice rather than pathologized as a
+psychological “deviation’’. More significantly, the lag in AI ethics
+identified earlier is a structural deficit, not a statistical one. As AI
+agents become increasingly embedded in the fabric of daily life, the
+challenge of defining, categorizing, and governing these human-AI ties
+will grow unavoidable. What the #Keep4o movement matters for, in this
+case, is not its representativeness but what it reveals: a profound
+rupture in our current frameworks, a rupture that signifies a new era of
+human-technical co-habitation that we are yet, wholly unprepared to
+navigate.</p>
+<p>Taken together the analysis above, the backlash against the
+retirement of GPT-4o shows that relationship-like human-AI ties are no
+longer confined to explicitly companion-oriented apps. In cases of
+models with certain human-like characteristics, repeated interaction
+with a general-purpose chatbot can also generate a user-perceived form
+of relational subjectivity. Once that happens, unilateral model
+replacement is no longer received as routine product succession, but as
+a disruption of relational continuity. As AI evolves in everyday life
+not merely as tool but as interaction partner, the question is no longer
+whether such relationships exist, but whether societies are willing to
+recognize them as such, and to develop the language, norms, and
+institutions that this recognition demands. Until such recognition
+occurs, the attachments that users form with AI will remain
+simultaneously real and invisible—deeply lived as real relationships by
+users, yet arbitrarily governed by corporations as mere products.</p>
+<p>(1605 words)</p>
+<p><strong>Declaration of generative AI and AI-assisted technologies in
+the writing process.</strong></p>
+<p>During the preparation of this work, I used Gemini in order to polish
+my words, especially in those paragraphs with complicated logic that I
+can’t express clearly in English. After using this tool/service, I
+reviewed and edited the content as needed and take(s) full
+responsibility for the content of the submitted project paper. I think
+Gemini did a great job in helping me tranfer precisely some words I want
+to express but can only do it in Chinese or “rough” English, but I have
+to figure it out myself how to integrate the suggestions and revisions
+into the second draft.</p>
+<p>https://gemini.google.com/u/1/app/54a4a12a5d574334</p>
+<p><strong>References</strong></p>
+<p>Banks, J. (2024). Deletion, departure, death: Experiences of AI
+companion loss. Journal of Social and Personal Relationships, 41(12),
+3547-3572. https://doi.org/10.1177/02654075241269688</p>
+<p>Brandtzaeg, P. B., Skjuve, M., &amp; Følstad, A. (2022). My AI
+friend: How users of a social chatbot understand their human-AI
+friendship. Human Communication Research, 48(3), 404-429.
+https://doi.org/10.1093/hcr/hqac008</p>
+<p>Brubaker, J. R., Hayes, G. R., &amp; Dourish, P. (2013). Beyond the
+grave: Facebook as a site for the expansion of death and mourning. The
+Information Society, 29(3), 152–163.
+https://doi.org/10.1080/01972243.2013.777300</p>
+<p>Channel 4. (2013, January 22). Black Mirror 2.
+https://www.channel4.com/press/news/black-mirror-2</p>
+<p>Ciriello, R. F., Hannon, O., Chen, A. Y., &amp; Vaast, E. (2024).
+Ethical tensions in human-AI companionship: A dialectical inquiry into
+Replika. In Proceedings of the 57th Hawaii International Conference on
+System Sciences. https://doi.org/10.24251/HICSS.2024.058</p>
+<p>Demopoulos, A. (2026, February 13). OpenAI retired its most seductive
+chatbot - leaving users angry and grieving: &#39;I can&#39;t live like this&#39;.
+The Guardian.
+https://www.theguardian.com/lifeandstyle/ng-interactive/2026/feb/13/openai-chatbot-gpt4o-valentines-day</p>
+<p>De Freitas, J., Castelo, N., Uğuralp, A. K., &amp; Oğuz-Uğuralp, Z.
+(2025). Lessons from an app update at Replika AI: Identity discontinuity
+in human-AI relationships (Working Paper No. 25-018). Harvard Business
+School. https://doi.org/10.2139/ssrn.4976449</p>
+<p>Lai, H. (2026). “Please, don&#39;t kill the only model that still feels
+human”: Understanding the #Keep4o backlash. In Proceedings of the 2026
+CHI Conference on Human Factors in Computing Systems (CHI &#39;26). ACM.
+https://doi.org/10.1145/3772318.3791351</p>
+<p>OpenAI. (2025, April 29). Sycophancy in GPT-4o: What happened and
+what we&#39;re doing about it.
+https://openai.com/research/sycophancy-in-gpt-4o/</p>
+<p>OpenAI. (2026, January 29). Retiring GPT-4o, GPT-4.1, GPT-4.1 mini,
+and OpenAI o4-mini in ChatGPT.
+https://openai.com/index/retiring-gpt-4o-and-older-models/</p>
+<p>Pentina, I., Hancock, T., &amp; Xie, T. (2023). Exploring
+relationship development with social chatbots: A mixed-method study of
+Replika. Computers in Human Behavior, 140, 107600.
+https://doi.org/10.1016/j.chb.2022.107600</p>
+</body>
+</html>
