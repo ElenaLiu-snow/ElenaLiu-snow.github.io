@@ -14,6 +14,7 @@ body{background:transparent}
 /* Hero */
 .hero{position:relative;padding:100px 24px 80px;text-align:center;overflow:hidden;background:linear-gradient(180deg,rgba(0,0,0,.7) 0%,rgba(0,0,0,.35) 70%,rgba(0,0,0,.55) 100%)}
 .hero>*{position:relative;z-index:2}
+.hero .avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid rgba(220,200,160,.3);margin-bottom:16px}
 .hero h1{font-size:28px;font-weight:600;letter-spacing:-.02em;color:#e8dcc8;margin-bottom:8px}
 .hero .subtitle{font-size:15px;color:rgba(220,200,160,.6);margin-bottom:16px}
 .hero .tags-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
@@ -91,6 +92,7 @@ body{background:transparent}
 <body>
 
 <section class="hero">
+  <img class="avatar" src="profile.png" alt="刘婧怡">
   <h1>刘婧怡 / Elena</h1>
   <p class="subtitle">北京大学 · AI 产品 · 西班牙语 & 经济学 · 摄影</p>
   <div class="tags-row">
@@ -204,6 +206,8 @@ function filter(cat){
 
 // Photo strip
 const PHOTOS=['12801782658478','12811782658482','12821782658485','12831782658486','12841782658488','12851782658491','12861782658493','12871782658497','12881782658500','12891782658502'].map(n=>`photos/photo_${n}.jpg`);
+const NEW_PHOTOS=['new_05cb8e0717ec1cf830b482efa09cdc0b','new_4f6cabf126afa67fda57a1cc229e3ca1','new_6f979ae8dd8e71b873552448b8a71244','new_83fbe1ac42836c98148c378b0e882bc5','new_870974a2809ce81283bb24a27f9ce73f','new_ac28bd26246626af4c1d083b35bacfb2','new_ff0671937aed22fad15dcc28d63d3c50'].map(n=>`photos/${n}.jpg`);
+PHOTOS.push(...NEW_PHOTOS);
 PHOTOS.forEach(src=>{const img=document.createElement('img');img.src=src;img.alt='摄影作品';img.loading='lazy';img.onclick=e=>{e.stopPropagation();openLightbox(src)};img.onload=function(){if(this.naturalHeight>this.naturalWidth)this.classList.add('portrait')};document.getElementById('photo-strip').appendChild(img)});
 function openLightbox(s){document.getElementById('lightbox-img').src=s;document.getElementById('lightbox').classList.add('open')}
 function closeLightbox(){document.getElementById('lightbox').classList.remove('open')}
